@@ -1,0 +1,50 @@
+.create-notes img {
+    height: 20px;
+}
+
+.group-button,
+.create-notes button {
+    height: 45px;
+    width: 45px;
+}
+
+.notes-group span {
+    font-size: 18px;
+}
+
+.group-active {
+    background: #2F2F2F2B;
+}
+
+.group-color {
+    height: 30px;
+    width: 30px;
+}
+
+.notes-panel {
+    background: #DAE5F5;
+}
+
+.notes-panel .lock-icon {
+    height: 13px;
+}
+
+main {
+    margin-bottom: 200px;
+}
+
+.bg-dark-blue {
+    background: #001F8B;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
