@@ -19,9 +19,10 @@ function App() {
   const [activeGroup, setActiveGroup] = useState(null);
   const [smallerScreen, handleSmallerScreen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [modal, setModal] = useState(null);
 
   function openModal() {
-    new bootstrap.Modal(document.getElementById('group-modal')).show();
+    if (modal) modal.show();
     setGroupError({ success: true, msg: '' });
   }
 
@@ -33,7 +34,7 @@ function App() {
     } else {
       setGroupInfo({ name: '', color: '', id: randNum });
       setAllGroup(prevGroups => [...prevGroups, groupInfo]);
-      setGroupError({ success: true, msg: "Group created successfully." });
+      if (modal) modal.hide();
     }
   }
 
@@ -87,6 +88,12 @@ function App() {
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const modalElement = document.getElementById('group-modal');
+    const modalInstance = new bootstrap.Modal(modalElement);
+    setModal(modalInstance);
   }, []);
 
   return (
